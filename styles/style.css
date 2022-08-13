@@ -1,0 +1,77 @@
+body {
+  background-color: hsl(30deg, 38%, 92%);
+  font-size: 14px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 452px;
+  width: 602px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.card-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.card-left a {
+  height: 100%;
+  width: 100%;
+}
+.card-left img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-right {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 25px 33px;
+}
+.card-right .card-txt {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 20px;
+  padding: 10px 0;
+}
+.card-right .card-txt h3 {
+  font-family: "Montserrat";
+  font-style: 500;
+  font-size: 12px;
+  letter-spacing: 0.45em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=style.css.map */

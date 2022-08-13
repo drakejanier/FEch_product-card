@@ -1,0 +1,79 @@
+//-- sizes
+$mobile: 375px;
+$desktop: 1440px;
+$fontsize: 14px;
+
+//--- colors
+$p-dcyan: hsl(158, 36%, 37%);
+$p-Cream: hsl(30, 38%, 92%);
+
+$n-dblue: hsl(212, 21%, 14%);
+$n-gblue: hsl(228, 12%, 48%);
+
+//flex
+@mixin flexbox($f-justify, $f-align, $f-direction,) {
+    display: flex;
+    justify-content: $f-justify;
+    align-items: $f-align;
+    flex-direction: $f-direction;
+}
+
+@mixin c-size($c-width, $c-height) {
+    height: $c-height;
+    width: $c-width;
+}
+
+
+body{
+    background-color: $p-Cream;
+    font-size: $fontsize;
+}
+.content-wrapper{
+    @include flexbox(center, center, column);
+    @include c-size(100vw, 95vh)
+}
+.card{
+    @include flexbox(center, center, row);
+    @include c-size(602px, 452px);
+    
+    background-color: #fff;
+    border-radius: 10px;
+}
+.card-left{
+    @include flexbox(center, center, row);
+    @include c-size(100%, 100%);
+
+    a{
+        @include c-size(100%, 100%)
+    }
+    img{
+        @include c-size(100%, 100%);
+        object-fit: cover;
+    }    
+}
+
+.card-right{
+    @include flexbox(left, flex-start, column);
+    @include c-size(100%, 100%);
+    
+    padding: 25px 33px;
+
+    .card-txt{
+        @include flexbox(left, flex-start, column);
+        
+        align-self: stretch;
+        gap: 20px;
+        padding: 10px 0;
+
+        h3{
+            font-family: 'Montserrat';
+            font-style: 500;
+            font-size: 12px;
+            
+            letter-spacing: 0.45em;
+        }
+    }
+}
+//-- attribution
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
