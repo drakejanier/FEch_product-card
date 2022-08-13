@@ -23,39 +23,64 @@ $n-gblue: hsl(228, 12%, 48%);
     width: $c-width;
 }
 
+h2{
+    font-family: Fraunces, 'Times New Roman', Times, serif;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 32px;  
+    margin: 0;     
+}
 
+.fa-regular{
+    font-size: 10px;
+    @include c-size(13px, 13px)
+}
 body{
     background-color: $p-Cream;
     font-size: $fontsize;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 .content-wrapper{
     @include flexbox(center, center, column);
-    @include c-size(100vw, 95vh)
+    @include c-size(100vw, 95vh);
+
+    gap: 30px;
 }
 .card{
     @include flexbox(center, center, row);
     @include c-size(602px, 452px);
     
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 10px;   
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+        box-shadow: 3px 3px 10px rgba(50,50,50,0.1);
+    }
 }
+
+
 .card-left{
     @include flexbox(center, center, row);
     @include c-size(100%, 100%);
+    
+    overflow: visible;
 
     a{
         @include c-size(100%, 100%)
     }
     img{
         @include c-size(100%, 100%);
+        border-radius: 10px 0 0 10px;
         object-fit: cover;
     }    
 }
 
 .card-right{
-    @include flexbox(left, flex-start, column);
-    @include c-size(100%, 100%);
+    @include flexbox(left, space-between, column);
+    @include c-size(100%, auto);
     
+    flex-grow: 0;
     padding: 25px 33px;
 
     .card-txt{
@@ -66,11 +91,36 @@ body{
         padding: 10px 0;
 
         h3{
-            font-family: 'Montserrat';
-            font-style: 500;
-            font-size: 12px;
-            
+            color: $n-gblue;
+            font-family: 'Montserrat';            
+            font-size: 12px;            
             letter-spacing: 0.45em;
+            font-weight: 500;
+            margin: 0;
+        }
+        h2{
+            color: $n-dblue;                            
+        }
+        p{
+            color: $n-gblue;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    .prices{
+        @include flexbox(left, center, row);
+        @include c-size(100%, 100%);
+
+        gap: 20px;
+        padding: 18px 0;
+
+        h2{
+            color: $p-dcyan;
+        }
+        h3{
+            color: $n-gblue;
+            font-weight: 500;
+            text-decoration: line-through;
         }
     }
 }

@@ -1,6 +1,21 @@
+h2 {
+  font-family: Fraunces, "Times New Roman", Times, serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+}
+
+.fa-regular {
+  font-size: 10px;
+  height: 13px;
+  width: 13px;
+}
+
 body {
   background-color: hsl(30deg, 38%, 92%);
   font-size: 14px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 .content-wrapper {
@@ -10,6 +25,7 @@ body {
   flex-direction: column;
   height: 95vh;
   width: 100vw;
+  gap: 30px;
 }
 
 .card {
@@ -21,6 +37,10 @@ body {
   width: 602px;
   background-color: #fff;
   border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.card:hover {
+  box-shadow: 3px 3px 10px rgba(50, 50, 50, 0.1);
 }
 
 .card-left {
@@ -30,6 +50,7 @@ body {
   flex-direction: row;
   height: 100%;
   width: 100%;
+  overflow: visible;
 }
 .card-left a {
   height: 100%;
@@ -38,6 +59,7 @@ body {
 .card-left img {
   height: 100%;
   width: 100%;
+  border-radius: 10px 0 0 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -45,10 +67,11 @@ body {
 .card-right {
   display: flex;
   justify-content: left;
-  align-items: flex-start;
+  align-items: space-between;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   width: 100%;
+  flex-grow: 0;
   padding: 25px 33px;
 }
 .card-right .card-txt {
@@ -61,10 +84,38 @@ body {
   padding: 10px 0;
 }
 .card-right .card-txt h3 {
+  color: hsl(228deg, 12%, 48%);
   font-family: "Montserrat";
-  font-style: 500;
   font-size: 12px;
   letter-spacing: 0.45em;
+  font-weight: 500;
+  margin: 0;
+}
+.card-right .card-txt h2 {
+  color: hsl(212deg, 21%, 14%);
+}
+.card-right .card-txt p {
+  color: hsl(228deg, 12%, 48%);
+  font-weight: 500;
+  margin: 0;
+}
+.card-right .prices {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+  padding: 18px 0;
+}
+.card-right .prices h2 {
+  color: hsl(158deg, 36%, 37%);
+}
+.card-right .prices h3 {
+  color: hsl(228deg, 12%, 48%);
+  font-weight: 500;
+  text-decoration: line-through;
 }
 
 .attribution {
