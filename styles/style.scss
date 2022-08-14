@@ -27,35 +27,39 @@ $n-gblue: hsl(228, 12%, 48%);
 .cart-svg{
     @include c-size(20px, 20px);
 }
-h2{
+h1, h2{
     font-family: Fraunces, 'Times New Roman', Times, serif;
-    font-size: 33px;
+    font-size: 2.357rem;
     font-weight: 700;
-    line-height: 32px;  
+    line-height: 2.357rem;  
     margin: 0;     
 }
 
 body{
+    @include flexbox(center, space-between, column);
     background-color: $p-Cream;
     font-size: $fontsize;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     margin:0;
+    min-height: 100vh;
     padding: 0;
 }
-.content-wrapper{
+.container{
     @include flexbox(center, center, column);
-    @include c-size(100vw, 95vh);
+    @include c-size(100%, 100%);
 
-    gap: 30px;
+    gap: 2.357 rem;
 }
 
 .card{
     @include flexbox(center, center, row);
-    @include c-size(602px, 452px);
+    //@include c-size(602px, 452px);
+    @include c-size(auto, auto);
     
     background-color: #fff;
     border-radius: 10px;   
     transition: 0.3s ease-in-out;
+    max-width: 43rem;
 
     &:hover{
         box-shadow: 3px 3px 10px rgba(50,50,50,0.1);
@@ -65,12 +69,13 @@ body{
 
 .card-left{
     @include flexbox(center, center, row);
-    @include c-size(100%, 100%);
+    @include c-size(100%, auto);
     
     background: url('../images/image-product-desktop.jpg');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
+    min-height: 452px;
 
     a{
         @include c-size(100%, 100%)
@@ -95,7 +100,7 @@ body{
         h3{
             color: $n-gblue;
             font-family: 'Montserrat';            
-            font-size: 12px;            
+            font-size: 0.857;            
             letter-spacing: 0.45em;
             font-weight: 500;
             margin: 0;
@@ -159,21 +164,30 @@ body{
     }
 }
 //-- attribution
-.attribution { font-size: 11px; text-align: center; }
+.attribution { 
+    font-size: 11px; text-align: center; 
+    margin-top: 2.5rem;
+    text-align: center;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 //-- MEDIA QUERIES
 @media only screen and (max-width: 414px) {
+    body{
+        @include flexbox(center, flex-start, column);
 
-    .content-wrapper{
-        @include flexbox(center, flex-start, column);        
-        @include c-size(100%, 95vh);
-        
+        padding: 7px 14px;
+    }
+
+    .container{  
+        @include flexbox(center, flex-start, column);  
+        @include c-size(auto, auto);
+                
         background-color: $p-Cream;
         box-sizing:border-box;
         margin: 0;
         overflow: hidden;
-        padding: 7px 14px;
+        
         
     }
     .card{
@@ -186,12 +200,13 @@ body{
 
     .card-left{
         @include flexbox(center, center, column);
-        @include c-size(100%, 25vh);
+        @include c-size(100%, auto);
         
-        background: url('../images/image-product-desktop.jpg');
-        background-size: cover;
+        background: url('../images/image-product-mobile.jpg');
+        background-size: auto 100%;
         background-repeat: no-repeat;
         border-radius: 10px 10px 0 0 ;
+        min-height: 25vh;
     
         a{
             @include c-size(100%, 100%)
@@ -205,4 +220,5 @@ body{
         flex-grow: 0;
         padding: 25px 25px;
     }
+    .attribution { width: 100%};
 }
