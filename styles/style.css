@@ -156,7 +156,7 @@ body {
   .content-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     height: 95vh;
     width: 100%;

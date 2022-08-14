@@ -166,7 +166,7 @@ body{
 @media only screen and (max-width: 414px) {
 
     .content-wrapper{
-        @include flexbox(center, center, column);
+        @include flexbox(center, flex-start, column);        
         @include c-size(100%, 95vh);
         
         background-color: $p-Cream;
