@@ -182,7 +182,7 @@ body{
     .container{  
         @include flexbox(center, flex-start, column);  
         @include c-size(auto, auto);
-                
+
         background-color: $p-Cream;
         box-sizing:border-box;
         margin: 0;
@@ -203,7 +203,7 @@ body{
         @include c-size(100%, auto);
         
         background: url('../images/image-product-mobile.jpg');
-        background-size: auto 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         border-radius: 10px 10px 0 0 ;
         min-height: 25vh;
@@ -219,6 +219,7 @@ body{
         box-sizing: border-box;
         flex-grow: 0;
         padding: 25px 25px;
+        max-width: 90vw;
     }
     .attribution { width: 100%};
 }
