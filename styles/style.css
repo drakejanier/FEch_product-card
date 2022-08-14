@@ -1,3 +1,8 @@
+.cart-svg {
+  height: 20px;
+  width: 20px;
+}
+
 h2 {
   font-family: Fraunces, "Times New Roman", Times, serif;
   font-size: 33px;
@@ -6,16 +11,12 @@ h2 {
   margin: 0;
 }
 
-.fa-regular {
-  font-size: 10px;
-  height: 13px;
-  width: 13px;
-}
-
 body {
   background-color: hsl(30deg, 38%, 92%);
   font-size: 14px;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .content-wrapper {
@@ -50,18 +51,14 @@ body {
   flex-direction: row;
   height: 100%;
   width: 100%;
-  overflow: visible;
+  background: url("../images/image-product-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
 }
 .card-left a {
   height: 100%;
   width: 100%;
-}
-.card-left img {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px 0 0 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .card-right {
@@ -117,6 +114,34 @@ body {
   font-weight: 500;
   text-decoration: line-through;
 }
+.card-right .btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.card-right .btn-wrap .btn {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(158deg, 36%, 37%);
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: 16px 0;
+  transition: 0.3s ease-in-out;
+}
+.card-right .btn-wrap .btn:hover {
+  background-color: #1D4436;
+}
+.card-right .btn-wrap .btn-txt::before {
+  content: url("../images/icon-cart.svg");
+  padding-right: 5px;
+  position: absolute;
+  margin-left: -1.5rem;
+}
 
 .attribution {
   font-size: 11px;
@@ -125,4 +150,57 @@ body {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media only screen and (max-width: 414px) {
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 100%;
+    background-color: hsl(30deg, 38%, 92%);
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    padding: 7px 14px;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .card-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 25vh;
+    width: 100%;
+    background: url("../images/image-product-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0 0;
+  }
+  .card-left a {
+    height: 100%;
+    width: 100%;
+  }
+  .card-right {
+    display: flex;
+    justify-content: left;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    flex-grow: 0;
+    padding: 25px 25px;
+  }
 }/*# sourceMappingURL=style.css.map */

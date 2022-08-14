@@ -1,3 +1,4 @@
+
 //-- sizes
 $mobile: 375px;
 $desktop: 1440px;
@@ -23,6 +24,9 @@ $n-gblue: hsl(228, 12%, 48%);
     width: $c-width;
 }
 
+.cart-svg{
+    @include c-size(20px, 20px);
+}
 h2{
     font-family: Fraunces, 'Times New Roman', Times, serif;
     font-size: 33px;
@@ -31,14 +35,12 @@ h2{
     margin: 0;     
 }
 
-.fa-regular{
-    font-size: 10px;
-    @include c-size(13px, 13px)
-}
 body{
     background-color: $p-Cream;
     font-size: $fontsize;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin:0;
+    padding: 0;
 }
 .content-wrapper{
     @include flexbox(center, center, column);
@@ -46,6 +48,7 @@ body{
 
     gap: 30px;
 }
+
 .card{
     @include flexbox(center, center, row);
     @include c-size(602px, 452px);
@@ -64,16 +67,15 @@ body{
     @include flexbox(center, center, row);
     @include c-size(100%, 100%);
     
-    overflow: visible;
+    background: url('../images/image-product-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
 
     a{
         @include c-size(100%, 100%)
     }
-    img{
-        @include c-size(100%, 100%);
-        border-radius: 10px 0 0 10px;
-        object-fit: cover;
-    }    
+
 }
 
 .card-right{
@@ -123,7 +125,84 @@ body{
             text-decoration: line-through;
         }
     }
+
+    .btn-wrap{
+        @include flexbox(center, center, row);
+
+        .btn{
+            @include c-size(100%, 100%);          
+            
+            background-color: $p-dcyan;
+            border: 0;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            padding: 16px 0;
+            transition: 0.3s ease-in-out;
+
+            &:hover{
+                background-color: #1D4436;
+            }
+        }
+
+        .btn-txt{
+            &::before{
+                content: url("../images/icon-cart.svg");
+                padding-right: 5px;
+                position: absolute;
+                margin-left: -1.5rem;
+            }
+            
+        }
+    }
 }
 //-- attribution
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+//-- MEDIA QUERIES
+@media only screen and (max-width: 414px) {
+
+    .content-wrapper{
+        @include flexbox(center, center, column);
+        @include c-size(100%, 95vh);
+        
+        background-color: $p-Cream;
+        box-sizing:border-box;
+        margin: 0;
+        overflow: hidden;
+        padding: 7px 14px;
+        
+    }
+    .card{
+        @include flexbox(center, center, column);
+        @include c-size(100%, auto);
+        
+        box-sizing:border-box;
+        margin:0;
+    }
+
+    .card-left{
+        @include flexbox(center, center, column);
+        @include c-size(100%, 25vh);
+        
+        background: url('../images/image-product-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px 10px 0 0 ;
+    
+        a{
+            @include c-size(100%, 100%)
+        }    
+    }
+    .card-right{
+        @include flexbox(left, space-between, column);
+        @include c-size(100%, auto);
+        
+        box-sizing: border-box;
+        flex-grow: 0;
+        padding: 25px 25px;
+    }
+}
